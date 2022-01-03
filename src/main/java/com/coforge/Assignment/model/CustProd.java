@@ -1,34 +1,26 @@
 package com.coforge.Assignment.model;
 
+import java.util.ArrayList;
+import java.util.List;
 
+public class CustProd {
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
-
-@Entity
-@Table(name="customer")
-public class Customer {
-
-	@Id
 	private Long custId;
 	private String name;
 	
-	
-	public Customer(Long custId, String name) {
+	List<Product> products=new ArrayList<>();
+
+	public CustProd(Long custId, String name, List<Product> products) {
 		super();
 		this.custId = custId;
 		this.name = name;
+		this.products = products;
 	}
-	
-	
 
-	public Customer() {
+	public CustProd() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-
 
 	public Long getCustId() {
 		return custId;
@@ -37,6 +29,7 @@ public class Customer {
 	public void setCustId(Long custId) {
 		this.custId = custId;
 	}
+
 	public String getName() {
 		return name;
 	}
@@ -44,6 +37,14 @@ public class Customer {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
 
+	public List<Product> getProducts() {
+		return products;
+	}
+
+	public void setProducts(List<Product> products) {
+		this.products = products;
+	}
+	
+	
 }
